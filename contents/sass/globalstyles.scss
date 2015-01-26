@@ -1,0 +1,283 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include font-size(14px);
+    background-color: $primary-background;
+    overflow-y: hidden;
+}
+//to-do: remove
+.tempheight {
+    height: 900px;
+}
+
+//helper classes
+.mobile_only {
+    @include breakpoint(sm) {
+        display: none;
+    }
+}
+
+//typography
+h1 {
+    font-family: $secondary_font;
+    font-weight: normal;
+    color: $headline_color;
+    @include font-size(50px);
+}
+
+p {
+    font-family: $primary_font;
+    @include font-size(16px);
+}
+
+#logo {
+    position: relative;
+    background-image: url(../assets/images/iF_logo_white_mobile.png);
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    text-indent: -9999px;
+    background-size: cover;
+    z-index: 999;
+    
+    @include breakpoint(sm) {
+        text-indent: 55px;
+        background-size: 45px;
+        width: auto;
+
+        a {
+            font-family: $secondary_font_bold;
+            color: #fff;
+            text-decoration: none;
+            @include font-size(25px);
+        }
+    }
+}
+
+//nav
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    overflow: hidden;
+    @include transition (background-color 0.5s ease-in-out);
+    z-index: 100;
+
+    .nav_contents {
+        opacity: 0;
+        z-index: -99;
+        @include transform (perspective(600px) rotateX(-20deg));
+        @include transition (all 0.5s ease-in-out);
+    }
+
+    ul {
+        padding: 0; margin: 0;
+    }
+
+    li {
+        display: block;
+        padding: 20px;
+        text-transform: uppercase;
+        text-align: center;
+
+
+        a {
+            font-family: $secondary_font_bold;
+            text-decoration: none;
+            color: #fff;
+            @include font-size(14px);
+            letter-spacing: 2px;
+
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+
+    .burger_and_fries {
+        position: relative;
+        float: right;
+        padding: 0;
+        width: 45px;
+        height: 40px;
+        cursor: pointer;
+        margin-right: 10px;
+
+        .patty {
+           width: 100%;
+            background-color: #fff;
+            height: 3px;
+            position: relative;
+            top: 44%;
+            @include transition(background-color 0.5s ease-in-out);
+
+            &:before, &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: #fff;
+                @include transition(all 0.5s ease-in-out);
+            }
+
+            &:before {
+                top: -11px;
+            }
+
+            &:after {
+                bottom: -11px;
+            }
+        }
+    }
+
+    &.mobile_nav_open {
+        background-color:rgba(0,0,0,.8);
+
+        .nav_contents {
+            visibility: visible;
+            opacity: 1;
+            z-index: 100;
+            margin-top: 0;
+            @include transition (all 0.5s ease-in-out);
+            @include transform (perspective(600px) rotateX(0deg));
+        }
+
+        .patty {
+            background-color: transparent;
+            &:before, &:after {
+                //for background-color change
+            }
+
+            &:before {
+                @include transform(rotate(-320deg));
+                top: 0;
+            }
+
+            &:after {
+                @include transform(rotate(320deg));
+                bottom: 0;
+            }
+        }
+    }
+
+    @include breakpoint(med) {
+        background-color:rgba(255,255,255,.8);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        top: auto;
+        height: auto;
+        padding: 16px 0 16px 0;
+        
+        .nav_contents {
+            display: block;
+            opacity: 1;
+            z-index: 1;
+            @include transform (none);
+            @include transition (all 0.5s ease-in-out);
+        }
+
+        li {
+            display: inline-block;
+            padding: 0 20px;
+
+            &.contact {
+                display: block;
+                float: right;
+            }
+
+            a {
+                font-family: $secondary_font_bold;
+                text-decoration: none;
+                color: $copy_color;
+                line-height: 1;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -7px;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: transparent;
+                    @include transition (background-color .35s ease);
+                }
+
+                &:hover:after {
+                    background-color: $copy_color;
+                }
+            }
+        }
+    }
+}
+
+//footer
+footer {
+    color: #fff;
+    padding-bottom: 82px;
+    background-color: $dark_background;
+
+    h1 {
+        @include font-size(12px);
+        font-family: $secondary_font_bold;
+        margin-top: 18px;
+    }
+
+    .column {
+        font-family: $secondary_font;
+    }
+
+    .social_icons_container, .copyright {
+        display: none;
+
+        @include breakpoint(med) {
+            display: block;
+        }
+    }
+}
+
+.social_icons_container {
+    text-align: center;
+    color: #fff;
+
+    .symbol {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        @include font-size(40px);
+
+        &:hover {
+            color: $hover;
+            @include transition (color .35s ease);
+        }
+    }
+}
+
+.copyright {
+    text-align: center;
+
+    p {
+        color: #fff;
+        @include font-size(10px);
+    }
+}
+
+//link styles
+a {
+    font-family: $primary_font;
+    @include font-size(16px);
+    text-decoration: underline;
+    color: $copy_color;
+    @include transition (color .35s ease);
+
+    &:hover {
+        color: $hover;
+    }
+}

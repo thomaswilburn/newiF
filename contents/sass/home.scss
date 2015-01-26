@@ -1,0 +1,83 @@
+// .background_video {
+//     display: block;
+//     position: fixed;
+//     left: 0; 
+//     top: 0;
+//     min-width: 100%; 
+//     min-height: 100%;
+//     width: 100%; 
+//     height: auto; 
+//     z-index: -100;
+//     background-image:url(../assets/images/mobile_home_splash.jpg);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+
+//     #bgvid {
+//         display: none;
+//     }
+
+//     @include breakpoint(med) {
+//         #bgvid {
+//             display: block;
+//         }
+//     }
+// }
+
+.background_video {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-image:url(../assets/images/mobile_home_splash.jpg);
+
+    #bgvid {
+         display: none;
+     }
+
+     @include breakpoint(med) {
+         #bgvid {
+             display: block;
+         }
+     }
+}
+
+//nav styles for the homepage
+.home {
+    nav {
+        .burger_and_fries {
+            display: none;
+        }
+
+        .nav_contents {
+            opacity: 1;
+            @include transform (none);
+            z-index: 1;
+        }
+
+        @include breakpoint(med) {
+            position: static;
+            margin-top: 20%;
+            ul {text-align: center;}
+            li {
+                border: 2px solid #fff;
+                margin: 0 10px;
+
+                &.contact {
+                    float: none;
+                    display: inline-block;
+                }
+
+                a {
+                    color: #fff;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        display: none;
+    }
+}

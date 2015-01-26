@@ -1,0 +1,10 @@
+extends layout
+block vars
+    - var pageTitle = 'Home page title'
+    - var bodyClass = 'home'
+block content
+    div.background_video
+        video(autoplay loop poster="../assets/images/mobile_home_splash.jpg" id="bgvid")
+            //need webm
+            source(src="../assets/video/if_homepage_compiled_render_07.mp4" type="video/webm")
+

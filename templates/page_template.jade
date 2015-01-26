@@ -1,0 +1,13 @@
+extends layout
+
+block vars
+    - var bodyClass = page.metadata.bodyClass
+
+block title
+  | #{ page.title}
+
+block content
+    div.column.size12of12
+        div.tempheight!= typogr(page.html).typogrify()
+            //content will be injected here from *.md files located in /contents
+

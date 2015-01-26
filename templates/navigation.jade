@@ -1,0 +1,13 @@
+nav.primary_nav
+    div.container
+        div.grid
+            div.column.mobile_only.burger_and_fries
+                div.patty
+            div.column.size12of12.nav_contents
+                ul
+                    - var navElements = ['portfolio', 'purpose', 'people', 'play', 'contact']
+                    each el in navElements
+                        li(class="#{ el }")
+                            a(href='' + el)= el
+                div.mobile_only
+                    include social_block

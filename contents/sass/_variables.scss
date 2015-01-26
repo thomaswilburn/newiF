@@ -1,0 +1,45 @@
+﻿// ----- COLORS -----
+$ifBlack:rgba(42,42,42,1);
+$ifTeal: rgba(11,219,212,1);
+$ifGray: rgba(242,242,242,1);
+$primary_background: $ifGray;
+$dark_background: $ifBlack;
+$copy_color: $ifBlack;
+$hover: $ifTeal;
+$headline_color: $ifTeal;
+$background_color: $ifGray;
+
+// ----- FONTS -----
+$avenir:  AvenirLTStd-Book;
+$avenir_black: AvenirLTStd-Black;
+$secondary_font: $avenir;
+$secondary_font_bold: $avenir_black;
+$merriweather: 'Merriweather', serif;
+$primary_font: $merriweather;
+
+
+
+// ----- GRID -----
+$max-width: 1360px; //true 1280px content column when accounting for container and column padding
+$grid-columns: 12;
+$column-width: ((1/$grid-columns)*100%);
+$gutter-width: 20px;
+$gutter-width-sm: 20px;
+$gutter-width-med: 24px;
+$gutter-width-lg: 30px;
+$gutter-width-xl: 40px;
+
+	//breakpoints
+	$breakpoint1prefix: sm;
+	$breakpoint2prefix: med;
+	$breakpoint3prefix: lg;
+	$breakpoint4prefix: xl;
+
+	//values
+	$sm: 481px;
+	$med: 768px;
+	$lg: 1024px;
+	$xl: 1280px;
+
+	//breakpoint names and values as a sass 'array'
+	$breakpoints: $breakpoint1prefix $sm, $breakpoint2prefix $med, $breakpoint3prefix $lg, $breakpoint4prefix $xl;
