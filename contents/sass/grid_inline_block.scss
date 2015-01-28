@@ -103,17 +103,19 @@
 //negative margin pulls the columns 'out' to negate the padding of .container element
 //padding of gutter width allows the full width column to maintain intended full outer gutter
 //full width column does not work at xl breakpoint because 100vw originates relative to a container element
-@media (max-width: 1279px) {
+@media (max-width: 1649px) {
+  .column.full_width,
 	.column.lg_full_width {
 		width: 100%;
 		width: calc(100% + #{$gutter-width-lg});
 		width: 100vw; //using vw will trigger horizontal scrollbar in desktop Chrome
 		margin-left: -($gutter-width-lg/2);
 		margin-right: -($gutter-width-lg/2);
-		padding: 0 $gutter-width-lg;
+    padding: 0;
 	}
 }
 @media (max-width: 1023px) {
+  .column.full_width,
 	.column.med_full_width,
 	.column.lg_full_width {
 		width: 100%;
@@ -121,10 +123,11 @@
 		width: 100vw; //using vw will trigger horizontal scrollbar in desktop Chrome
 		margin-left: -($gutter-width-med/2);
 		margin-right: -($gutter-width-med/2);
-		padding: 0 $gutter-width-med;
+    padding: 0;
 	}
 }
 @media (max-width: 767px) {
+  .column.full_width,
 	.column.sm_full_width,
 	.column.med_full_width,
 	.column.lg_full_width {
@@ -133,7 +136,7 @@
 		width: 100vw; //using vw will trigger horizontal scrollbar in desktop Chrome
 		margin-left: -($gutter-width/2);
 		margin-right: -($gutter-width/2);
-		padding: 0 $gutter-width;
+    padding: 0;
 	}
 }
 @media (max-width: 480px) {
@@ -146,7 +149,7 @@
 		width: 100vw; //using vw will trigger horizontal scrollbar in desktop Chrome
 		margin-left: -($gutter-width/2);
 		margin-right: -($gutter-width/2);
-		padding: 0 $gutter-width;
+    padding: 0;
 	}
 }
 

@@ -20,7 +20,7 @@ $primary_font: $merriweather;
 
 
 // ----- GRID -----
-$max-width: 1360px; //true 1280px content column when accounting for container and column padding
+$max-width: 1730px; //true 1650px content column when accounting for container and column padding
 $grid-columns: 12;
 $column-width: ((1/$grid-columns)*100%);
 $gutter-width: 20px;
@@ -39,7 +39,7 @@ $gutter-width-xl: 40px;
 	$sm: 481px;
 	$med: 768px;
 	$lg: 1024px;
-	$xl: 1280px;
+	$xl: 1650px;
 
 	//breakpoint names and values as a sass 'array'
 	$breakpoints: $breakpoint1prefix $sm, $breakpoint2prefix $med, $breakpoint3prefix $lg, $breakpoint4prefix $xl;

@@ -6,7 +6,6 @@
     "description": "Building the future for intentional design"
   },
   "plugins": [
-    "./plugins/paginator.coffee"
   ],
   "require": {
     "moment": "moment",
@@ -19,8 +18,5 @@
   "markdown": {
     "smartLists": true,
     "smartypants": true
-  },
-  "paginator": {
-    "perPage": 3
   }
 }

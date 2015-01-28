@@ -52,31 +52,24 @@
             opacity: 1;
             @include transform (none);
             z-index: 1;
+            margin-top: 76px;
         }
 
         @include breakpoint(med) {
-            position: static;
-            margin-top: 20%;
-            ul {text-align: center;}
-            li {
-                border: 2px solid #fff;
-                margin: 0 10px;
+            background-color: transparent;
+            margin-top: 0;
 
-                &.contact {
-                    float: none;
-                    display: inline-block;
-                }
-
-                a {
+            li a {color: #fff;
+                &:hover {
                     color: #fff;
-
-                    &:hover {
-                        text-decoration: none;
-                    }
+                }
+                &:hover:after {
+                    background-color: #fff;
                 }
             }
         }
     }
+
     footer {
         display: none;
     }

@@ -1,0 +1,93 @@
+.tab_controls {
+  position: relative;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    &.active {
+      background-color: $primary-background;
+    }
+
+    a {
+      padding: 0 20px;
+      display: block;
+      line-height: 3;
+      vertical-align: middle;
+      text-decoration: none;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.tab_headings {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.tabs_banner {
+  position: relative;
+}
+
+.tabs_banner, .tab_image {
+   height: 200px;
+}
+
+.tab_image {
+  background-color: red;
+  width: 100%;
+  position: absolute;
+}
+
+.tab_content_container {
+  position: relative;
+}
+
+//overlays tab controls onto banner image
+.tab_controls, .tab_content_container {
+  top: -48px;
+}
+
+.tab_content {
+  position: absolute;
+}
+
+//animations
+.tab_image {
+  @include transition (opacity 0.5s ease-in-out);
+}
+.tab_image, .tab_content {
+  top: 0;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@include breakpoint(sm) {
+  .tabs_banner, .tab_image {
+    height: 300px;
+  }
+}
+
+@include breakpoint(med) {
+  .tabs_banner, .tab_image {
+    height: 380px;
+  }
+}
+
+@include breakpoint(lg) {
+  .tabs_banner, .tab_image {
+    height: 450px;
+  }
+}
+
+@include breakpoint(xl) {
+  .tabs_banner, .tab_image {
+    height: 550px;
+  }
+}

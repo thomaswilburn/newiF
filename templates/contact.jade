@@ -1,0 +1,33 @@
+extends layout
+
+block vars
+    - var bodyClass = page.metadata.bodyClass
+
+block append head
+    script(src='/scripts/tabs.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDUnXoC05Yid9xykv4dtj5KgFJE7ejwMbA&amp;sensor=false')
+    script(src='/scripts/googlemaps.js')
+
+block title
+  | #{ page.title}
+
+block content
+        //to-do loop tab creation
+        div#contact_tabs.tabs_container
+            div.tabs_banner.column.full_width
+                div#map_canvas.tab_image.active
+                div.tab_image
+            div.tab_controls.column.size12of12
+                ul.tab_headings
+                    li.active
+                        a(href="#visit_if") Visit iF
+                    li
+                        a(href="#join_if") Join iF
+            div.column.size12of12.tab_content_container
+                div#visit_if.tab_content.active
+                    include:markdown ../contents/contact/contact-if.md
+                    include:markdown ../contents/contact/find-if.md
+                    include:markdown ../contents/contact/get-to-if.md
+                div#join_if.tab_content
+                    include:markdown ../contents/contact/join-if.md
+                    include:markdown ../contents/contact/ui-dev.md
