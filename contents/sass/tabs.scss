@@ -1,5 +1,6 @@
 .tab_controls {
   position: relative;
+  z-index: 10;
 
   li {
     list-style: none;
@@ -44,6 +45,7 @@
 
 .tab_content_container {
   position: relative;
+  overflow: hidden;
 }
 
 //overlays tab controls onto banner image
@@ -53,6 +55,7 @@
 
 .tab_content {
   position: absolute;
+  overflow: hidden;
 }
 
 //animations
@@ -62,9 +65,11 @@
 .tab_image, .tab_content {
   top: 0;
   opacity: 0;
+  z-index: -1;
 
   &.active {
     opacity: 1;
+    z-index: 1;
   }
 }
 

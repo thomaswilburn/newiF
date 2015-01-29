@@ -1,0 +1,19 @@
+extends layout
+
+block vars
+    - var bodyClass = people
+
+block title
+  | #{ page.title}
+
+block content
+    div#people
+        div.column.size12of12.tab_content_container
+            - var people = _.chain(contents['people']._.directories).filter(function(item) {
+            -   return (item)
+            - }).map(function(item) {
+            -   return item.name_title
+            - })
+
+             each person in people
+                != person.html

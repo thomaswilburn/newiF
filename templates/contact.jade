@@ -30,4 +30,9 @@ block content
                     include:markdown ../contents/contact/get-to-if.md
                 div#join_if.tab_content
                     include:markdown ../contents/contact/join-if.md
-                    include:markdown ../contents/contact/ui-dev.md
+                    - var jobs = _.chain(contents['contact']['positions']._.pages, function(item) {
+                    -   return item
+                    - }).value()
+                    each job in jobs
+                        article
+                            != job.html

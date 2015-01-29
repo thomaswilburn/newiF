@@ -4,9 +4,10 @@ $(function () {
         function init() {
             var tabContent = $(".tab_content", tab);
             var tabHeadings = $("ul.tab_headings", tab);
-            var h = $('.tab_content.active').outerHeight();
+            var h = null;
 
             function setHeight() {
+                h = $('.tab_content.active').outerHeight();
                 $('.tab_content_container').css('minHeight', h);
             };
 
@@ -17,7 +18,6 @@ $(function () {
                     return false;
                 } else {
                     var index = $(this).index();
-                    h = $('.tab_content:eq('+ index +')').outerHeight();
                     //deactivate active tab
                     $('.active').removeClass('active')
                     //activate new tab
@@ -29,6 +29,10 @@ $(function () {
                 };
                 return false;
             });
+
+            window.onresize = function(event) {
+                setHeight();
+            };
         }
         init();
     });
