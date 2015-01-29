@@ -18,6 +18,10 @@ html {
 
 body {
   margin: 0;
+
+  * {
+    @include border_box_sizing;
+  }
 }
 
 /* HTML5 display definitions

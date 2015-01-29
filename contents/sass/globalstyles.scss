@@ -6,6 +6,10 @@ body {
     @include font-size(14px);
     background-color: $primary-background;
     overflow-y: hidden;
+
+    &.mobile_nav_open {
+        overflow: hidden;
+    }
 }
 //to-do: remove
 .tempheight {
@@ -24,12 +28,17 @@ h1 {
     font-family: $secondary_font;
     font-weight: normal;
     color: $headline_color;
-    @include font-size(50px);
+    @include font-size(40px);
+
+    @include breakpoint(med) {
+        @include font-size(50px);
+    }
 }
 
 p {
     font-family: $primary_font;
     @include font-size(16px);
+    line-height: 35px;
 }
 
 header {

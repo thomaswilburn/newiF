@@ -15,6 +15,9 @@
       line-height: 3;
       vertical-align: middle;
       text-decoration: none;
+      font-family: $secondary-font-bold;
+      text-transform: uppercase;
+      @include font-size(14px);
 
       &:hover {
         color: inherit;
@@ -50,7 +53,7 @@
 
 //overlays tab controls onto banner image
 .tab_controls, .tab_content_container {
-  top: -48px;
+  top: -40px;
 }
 
 .tab_content {

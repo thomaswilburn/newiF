@@ -1,28 +1,5 @@
-// .background_video {
-//     display: block;
-//     position: fixed;
-//     left: 0; 
-//     top: 0;
-//     min-width: 100%; 
-//     min-height: 100%;
-//     width: 100%; 
-//     height: auto; 
-//     z-index: -100;
-//     background-image:url(../assets/images/mobile_home_splash.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-
-//     #bgvid {
-//         display: none;
-//     }
-
-//     @include breakpoint(med) {
-//         #bgvid {
-//             display: block;
-//         }
-//     }
-// }
-
+@import '_variables';
+@import '_mixins';
 .background_video {
     position: absolute;
     overflow: hidden;

@@ -1,5 +1,5 @@
 ﻿// ----- COLORS -----
-$ifBlack:rgba(42,42,42,1);
+$ifBlack:rgba(71,71,71,1);
 $ifTeal: rgba(11,219,212,1);
 $ifGray: rgba(242,242,242,1);
 $primary_background: $ifGray;
@@ -8,6 +8,7 @@ $copy_color: $ifBlack;
 $hover: $ifTeal;
 $headline_color: $ifTeal;
 $background_color: $ifGray;
+$border_color: $ifTeal;
 
 // ----- FONTS -----
 $avenir:  AvenirLTStd-Book;

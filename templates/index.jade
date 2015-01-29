@@ -2,6 +2,8 @@ extends layout
 block vars
     - var pageTitle = 'Home page title'
     - var bodyClass = 'home'
+block append head
+    link(rel='stylesheet', href='/css/home.css')
 block content
     div.background_video
         video(autoplay loop poster="../assets/images/mobile_home_splash.jpg" id="bgvid")
