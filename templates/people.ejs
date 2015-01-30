@@ -1,0 +1,6 @@
+<h1>People!</h1>
+<% for (var name in contents.people) { %>
+<%= contents.people[name].html %>
+<% } %>
+
+<%= include("templates/ejsInclude.html", { world: "Chris" }) %>

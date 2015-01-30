@@ -6,6 +6,7 @@
     "description": "Building the future for intentional design"
   },
   "plugins": [
+    "./plugins/ejsTemplate.js"
   ],
   "require": {
     "moment": "moment",
